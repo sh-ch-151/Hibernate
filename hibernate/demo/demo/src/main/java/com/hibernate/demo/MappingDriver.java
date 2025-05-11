@@ -18,13 +18,13 @@ public class MappingDriver
     public static void main(String[] args)
     {
         Laptop laptop = new Laptop();
-        laptop.setlId(105);
-        laptop.setlName("HP");
+        laptop.setlId(106);
+        laptop.setlName("LENOVO");
 
         Student student = new Student();
-        student.setRollNo(2);
-        student.setName("Shweta");
-        student.setMarks(90);
+        student.setRollNo(3);
+        student.setName("POOJA");
+        student.setMarks(100);
         student.getLaptop().add(laptop);
 
         laptop.getStudents().add(student);
@@ -34,14 +34,14 @@ public class MappingDriver
         SessionFactory sf = conf.buildSessionFactory(reg);
         Session session = sf.openSession();
         Transaction tx = session.beginTransaction();
-//        session.save(laptop);
-//        session.save(student);
-        Student s = session.get(Student.class, 2);
-//        List<Laptop> laps = s.getLaptop();
-//        for(Laptop l : laps)
-//        {
-//            System.out.println(l.getlId());
-//        }
+//        session.persist(laptop);
+//        session.persist(student);
+        Student s = session.get(Student.class, 3);
+        List<Laptop> laps = s.getLaptop();
+        for(Laptop l : laps)
+        {
+            System.out.println(l.getlId());
+        }
         System.out.println(s);
         tx.commit();
     }

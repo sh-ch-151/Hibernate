@@ -21,8 +21,7 @@ public class GetAndLoadMethod
 
 		Employee emp = session.get(Employee.class, 1);
 		System.out.println(emp);
-
-
+		
 //		emp = session.load(Employee.class, 1);
 //		System.out.println(emp);
 

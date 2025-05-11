@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Employee
 {
     @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int rollNo;
     private String name;
     private int marks;
